@@ -39,15 +39,15 @@ function guessNumbers(numbers){
         if(userNumber == arrayNumbers[i]){
             numbersRight++
             numersContainer.innerHTML += `
-            <h3>Esatto! Il ${i+1}° numero era ${userNumber}!</h3>
+            <span>Esatto! Il ${i+1}° numero era ${userNumber}!</span>
             `
         }else{
             numersContainer.innerHTML += `
-            <h3>Sbagliato. Il ${i+1}° numero era ${arrayNumbers[i]}...</h3>
+            <span>Sbagliato. Il ${i+1}° numero non era ${userNumber} ma era ${arrayNumbers[i]}...</span>
             `
         }
     }
     numersContainer.innerHTML += `
-    <h2>Hai indovinato ${numbersRight} numeri su ${i}</h2>
+    <h3>Hai indovinato ${numbersRight} numeri su ${i}</h3>
     `
 }
