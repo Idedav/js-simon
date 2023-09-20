@@ -1,16 +1,18 @@
-const numA = randomizer(1,100);
-const numB = randomizer(1,100);
-const numC = randomizer(1,100);
-const numD = randomizer(1,100);
-const numE = randomizer(1,100);
+const numersContainer = document.querySelector('.random-numbers');
+const numbers = [];
 
 
 
 
 
 
-
-// -----------FUNCTIONS-------------
-function randomizer(min,max){
-    return Math.floor((Math.random() * max ) + min );
+// -------FUNCTION----------
+function genRandomNum(){
+    for(i = 0; i < 5; i++){
+        const number = Math.floor((Math.random() * 100) + 1);
+        numbers.push(number);
+    }
+    return numbers;
 }
+
+console.log(genRandomNum());
