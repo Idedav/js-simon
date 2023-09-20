@@ -1,7 +1,12 @@
 const numersContainer = document.querySelector('.random-numbers');
-const numbers = [];
+const btnStart = document.querySelector('.btn');
+const arrayNumbers = [];
 
-
+btnStart.addEventListener('click', function(){
+    reset();
+    genRandomNum();
+    printNumbers();
+})
 
 
 
@@ -10,9 +15,17 @@ const numbers = [];
 function genRandomNum(){
     for(i = 0; i < 5; i++){
         const number = Math.floor((Math.random() * 100) + 1);
-        numbers.push(number);
+        arrayNumbers.push(number);
     }
-    return numbers;
+    return arrayNumbers;
 }
 
-console.log(genRandomNum());
+function printNumbers(){
+    const numbers = arrayNumbers.join(' ');
+    numersContainer.innerHTML= numbers;
+}
+
+function reset(){
+    numersContainer.innerHTML= '';
+    return numersContainer;
+}
