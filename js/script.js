@@ -6,6 +6,8 @@ btnStart.addEventListener('click', function(){
     reset();
     genRandomNum();
     printNumbers();
+    setTimeout(reset, 5000);
+    setTimeout(guessNumbers, 6000);
 })
 
 
@@ -28,4 +30,15 @@ function printNumbers(){
 function reset(){
     numersContainer.innerHTML= '';
     return numersContainer;
+}
+
+function guessNumbers(numbers){
+    for(i = 0; i < 5; i++){
+        const userNumber = prompt('che numero era quello che stava in ' + (i+1) + '° posizione?');
+        if(userNumber == arrayNumbers[i]){
+            console.log('giusto');
+        }else{
+            console.log('sbagliato');
+        }
+    }
 }
