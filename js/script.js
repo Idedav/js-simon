@@ -33,12 +33,21 @@ function reset(){
 }
 
 function guessNumbers(numbers){
+    let numbersRight = 0;
     for(i = 0; i < 5; i++){
         const userNumber = prompt('che numero era quello che stava in ' + (i+1) + '° posizione?');
         if(userNumber == arrayNumbers[i]){
-            console.log('giusto');
+            numbersRight++
+            numersContainer.innerHTML += `
+            <h3>Esatto! Il ${i+1}° numero era ${userNumber}!</h3>
+            `
         }else{
-            console.log('sbagliato');
+            numersContainer.innerHTML += `
+            <h3>Sbagliato. Il ${i+1}° numero era ${arrayNumbers[i]}...</h3>
+            `
         }
     }
+    numersContainer.innerHTML += `
+    <h2>Hai indovinato ${numbersRight} numeri su ${i}</h2>
+    `
 }
